@@ -1,5 +1,9 @@
 package LotteWorldTicketBox0421;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class System06Print {
 	
 	System06Print() {
@@ -41,5 +45,38 @@ public class System06Print {
 	void run_printTicketFinal() {
 		System.out.printf("\n****************************************\n");
 		System.out.printf("%20s", "최종 선택 내역");
+	}
+	
+	
+	// 판매 데이터 출력 (.csv file format) => ing....
+	void run_writeCSVFile(System01Input system01Input, VariableValue variableValue) {
+		
+		BufferedWriter dataOut;
+		try {
+			dataOut = new BufferedWriter(new FileWriter("C:\\LotteWorldTicketData\\TicketSalesData.csv"));
+			for (int index = 0; index < system01Input.OrderDataList.size(); index++) {
+		
+				dataOut.write(variableValue.getTodayYear());
+				dataOut.write(variableValue.getTodayMonth());
+				dataOut.write(variableValue.getTodayDay());
+				dataOut.write(system01Input.OrderDataList.get(index).getTicketTypeName());
+				dataOut.write(system01Input.OrderDataList.get(index).getAgeTypeName());
+				dataOut.write(system01Input.OrderDataList.get(index).getTicketPrice());
+				dataOut.write(system01Input.OrderDataList.get(index).getInputNumberOfTicket());
+				dataOut.write(system01Input.OrderDataList.get(index).getTotalTicketPrice());
+				dataOut.write(system01Input.OrderDataList.get(index).getBenefitType());
+				dataOut.write(system01Input.OrderDataList.get(index).getBenefitAmountPerTicket());
+				dataOut.write(system01Input.OrderDataList.get(index).getBenefitAppliedTicketNumber());
+				dataOut.write(system01Input.OrderDataList.get(index).getDiscountedTicketPrice());
+				dataOut.write(system01Input.OrderDataList.get(index).getFinalTicketPrice());
+				
+			}
+				dataOut.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	
 	}
 }

@@ -63,6 +63,8 @@ public class System00HereWeGo {
 			system05ArrayListInput.run_ArrayListInput(system01Input, system01Input.variablePrint);
 			
 			system06Print.run_printTicket(system01Input);
+			system06Print.run_writeCSVFile(system01Input, system01Input.variableValue);
+			
 			system07Repeat.run_System07Repeat(system01Input.variableValue);
 			
 		} while (system01Input.variableValue.getContinueTicketPurchase() == 1 );
