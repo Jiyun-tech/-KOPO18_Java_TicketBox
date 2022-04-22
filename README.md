@@ -1,6 +1,6 @@
 Updated : Apr. 21, 2022 <br/><br/>
-# 롯데월드 티켓 발권 프로그램 <br/> 
-1. 사용 언어 : Java<br/>
+# 🎢 롯데월드 티켓 발권 프로그램 <br/> 
+1. 사용 언어 : Java<br/> 
 2. 기능 : <br/>
         (1) 입력한 항목에 따라 티켓 가격 자동 계산하여 출력<br/>
         (2) 오류 값 입력 시, 입력창 재출력<br/>
@@ -23,15 +23,15 @@ Updated : Apr. 21, 2022 <br/><br/>
         (10) 최종 가격 (티켓 총 가격 * 우대 할인 총 금액)<br/>
 <br/>
 <br/>
-## 프로그램 구조 <br/> 
+# 프로그램 구조 <br/> 
 ![LotteWorldTicketBox03_구조 (2022 04 22)](https://user-images.githubusercontent.com/100850714/164425116-1737741f-edef-4fbd-85cb-693b37371a54.jpg)
 <br/>
 <br/>
-## 클래스 리스트 <br/> 
+# 클래스 리스트 <br/> 
 ![LotteWorldTicketBox03_클래스 리스트 (2022 04 22)](https://user-images.githubusercontent.com/100850714/164425148-b9ec59a1-0a7f-46b3-8ecc-6fbc0bc56a47.jpg)
 <br/>
 <br/>
-## 구동 화면<br/>
+# 구동 화면<br/>
 ![image](https://user-images.githubusercontent.com/100850714/164576934-fb9976a1-b452-49ed-bf11-4094e0f81222.png)
 ![image](https://user-images.githubusercontent.com/100850714/164576964-71db4098-0e90-48f9-9f1b-734054d9cad8.png)
 <br/>
