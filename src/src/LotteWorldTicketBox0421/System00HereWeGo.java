@@ -6,39 +6,18 @@ public class System00HereWeGo {
 	}
 	
 	System01Input system01Input = new System01Input();
-//	System00HereWeGo (System01Input system01Input) {
-//		this.system01Input = system01Input;
-//	}
 	
 	System02Calculate system02Calculate = new System02Calculate();
-//	System00HereWeGo (System02Calculate system02Calculate) {
-//		this.system02Calculate = system02Calculate;
-//	}
 	
 	System03Input system03Input = new System03Input();
-//	System00HereWeGo (System03Input system03Input) {
-//		this.system03Input = system03Input;
-//	}
 	
 	System04Calculate system04Calculate = new System04Calculate();
-//	System00HereWeGo (System04Calculate system04Calculate) {
-//		this.system04Calculate = system04Calculate;
-//	}
-	
+
 	System05ArrayListInput system05ArrayListInput = new System05ArrayListInput();
-//	System00HereWeGo (System05ArrayListInput system05ArrayListInput) {
-//		this.system05ArrayListInput = system05ArrayListInput;
-//	}
 	
 	System06Print system06Print = new System06Print();
-//	System00HereWeGo (System06Print system06Print) {
-//		this.system06Print = system06Print;
-//	}
 	
 	System07Repeat system07Repeat = new System07Repeat();
-//	System00HereWeGo (System07Repeat system07Repeat) {
-//		this.system07Repeat = system07Repeat;
-//	}
 	
 	void runTheSystem() {
 		
