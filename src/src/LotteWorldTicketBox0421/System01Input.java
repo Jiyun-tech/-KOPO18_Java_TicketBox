@@ -33,7 +33,7 @@ public class System01Input {
 	// 1. 권종 선택 : 장소 (종합이용권 vs 파크이용권)
 	int inputTicketPlace() {
 		do {
-			System.out.printf("권종을 선택하세요.\n\t1. 종합이용권(롯데월드+민속박물관)\n\t2. 파크이용권(롯데월드)\n\t=> ");
+			System.out.printf("[권종을 선택하세요.]\n\t1. 종합이용권(롯데월드+민속박물관)\n\t2. 파크이용권(롯데월드)\n\t=> ");
 			variableValue.setInputTicketSelect_place(scanner.nextInt());
 		} while (! (variableValue.getInputTicketSelect_place() == 1 || variableValue.getInputTicketSelect_place() == 2));
 
@@ -43,7 +43,7 @@ public class System01Input {
 	// 2. 권종 선택 : 시간 (종일권 vs 오후권)
 	int inputTicketTime() { 
 		do {
-			System.out.printf("사용 시간을 선택하세요.\n\t1. 종일권(1DAY)\n\t2. 오후권(AFTER4)\n\t=> ");
+			System.out.printf("[사용 시간을 선택하세요.]\n\t1. 종일권(1DAY)\n\t2. 오후권(AFTER4)\n\t=> ");
 			variableValue.setInputTicketSelect_time(scanner.nextInt());
 		} while (! (variableValue.getInputTicketSelect_time() == 1 || variableValue.getInputTicketSelect_time() == 2));
 		
@@ -54,7 +54,7 @@ public class System01Input {
 	void inputSocialID() { 
 		String inputSocialID;
 		do {
-			System.out.printf("주민등록번호 앞 7자리 숫자를 입력하세요. (앞6자리 숫자 + 뒷자리의 첫 숫자)\n\t=> ");	
+			System.out.printf("[주민등록번호 앞 7자리 숫자를 입력하세요.(앞6자리 숫자 + 뒷자리의 첫 숫자)]\n\t=> ");	
 			inputSocialID = scanner.next();
 			variableValue.setSocialID(new char[inputSocialID.length()]);
 			for (int index = 0; index < variableValue.getSocialID().length; index++) {
@@ -71,7 +71,7 @@ public class System01Input {
 	// 4. 티켓 수량 입력 (MAX 10)
 	int inputNumberOfTicket() { 
 		do {
-			System.out.print("구매하실 티켓 수량을 입력하세요.(최대 10장)\n\t => ");
+			System.out.print("[구매하실 티켓 수량을 입력하세요.(최대 10장)]\n\t => ");
 			variablePrint.setInputNumberOfTicket(scanner.nextInt());
 		} while ( variablePrint.getInputNumberOfTicket() < 1 || variablePrint.getInputNumberOfTicket() > 10 );
 		
