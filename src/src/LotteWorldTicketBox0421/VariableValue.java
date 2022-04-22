@@ -11,7 +11,7 @@ public class VariableValue {
 	private char [] socialID;		// 사용자 주민등록번호 String -> Character
 	private int inputBenefit;	// 우대사항 
 	private int inputBenefit_Elder;	// 경로 우대 대상자 추가 선택 (경로 우대 vs 상시 우대)
-	ArrayList<Integer> priceList = new ArrayList<Integer>();
+	private ArrayList<Integer> priceList = new ArrayList<Integer>();
 	
 	// 계산 변수
 	private int birthYearIndex; // 1,2,3,4 (성별 및 태어난 연도(1900년대&2000년대) 식별자)

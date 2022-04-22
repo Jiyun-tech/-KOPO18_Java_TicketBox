@@ -12,36 +12,36 @@ public class System04Calculate {
 		if (variableValue.getUserAge() >= StaticValue.getElderAgeMin() && variableValue.getInputBenefit_Elder() == 1) {
 			// 경로 할인 대상 -> 티켓 기본 가격 경로 우대 가격으로 지정되고, 상시 할인은 NON으로 적용됨.
 			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameElder()); // 나이 그룹(이름) : 경로
-			variablePrint.setTicketPrice(variableValue.priceList.get(0)); // 가격 : 경로
+			variablePrint.setTicketPrice(variableValue.getPriceList().get(0)); // 가격 : 경로
 		} if (variableValue.getUserAge() >= StaticValue.getElderAgeMin() && variableValue.getInputBenefit_Elder() == 2) { 
 			// 경로 대상 나이이나, 상시 할인 선택한 경우 -> 티켓 기본 가격은 성인 가격으로 적용 & 상시 우대 적용됨.
 				variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameAdult()); // 나이 그룹(이름) : 성인
-				variablePrint.setTicketPrice(variableValue.priceList.get(1)); // 가격 :성인
+				variablePrint.setTicketPrice(variableValue.getPriceList().get(1)); // 가격 :성인
 		} if (variableValue.getUserAge() >= StaticValue.getAdultAgeMin() 
 				&& variableValue.getUserAge() <= StaticValue.getAdultAgeMax()) {
 			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameAdult()); // 나이 그룹(이름) : 성인
-			variablePrint.setTicketPrice(variableValue.priceList.get(1)); // 가격 : 성인
+			variablePrint.setTicketPrice(variableValue.getPriceList().get(1)); // 가격 : 성인
 		} if (variableValue.getUserAge() >= StaticValue.getJuvernileAgeMin()
 				&& variableValue.getUserAge() <= StaticValue.getJuvenileAgeMax()) {
 			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameJuvenile()); // 나이 그룹(이름) : 청소년
-			variablePrint.setTicketPrice(variableValue.priceList.get(2)); // 가격 : 청소년
+			variablePrint.setTicketPrice(variableValue.getPriceList().get(2)); // 가격 : 청소년
 		} if (variableValue.getUserAge() >= StaticValue.getChildAgeMin()
 				&& variableValue.getUserAge() <= StaticValue.getChildAgeMax()) {
 			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameChild()); // 나이 그룹(이름) : 어린이
-			variablePrint.setTicketPrice(variableValue.priceList.get(3)); // 가격 : 어린이
+			variablePrint.setTicketPrice(variableValue.getPriceList().get(3)); // 가격 : 어린이
 		} if (variableValue.getUserAge() >= StaticValue.getBabyAgeMin()
 				&& variableValue.getUserAge() <= StaticValue.getBabyAgeMax()
 				&& variableValue.getInputTicketSelect_Baby() == 1) {
 			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameBabyFreepass()); // 나이 그룹(이름) : 베이비-자유이용권(유료)
-			variablePrint.setTicketPrice(variableValue.priceList.get(4)); // 가격 : 베이비-자유이용권(유료)
+			variablePrint.setTicketPrice(variableValue.getPriceList().get(4)); // 가격 : 베이비-자유이용권(유료)
 		} if (variableValue.getUserAge() >= StaticValue.getBabyAgeMin()
 				&& variableValue.getUserAge() <= StaticValue.getBabyAgeMax()
 				&& variableValue.getInputTicketSelect_Baby() == 2) {
 			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameBabyEnterance()); // 나이 그룹(이름) : 베이비-입장권(무료)
-			variablePrint.setTicketPrice(variableValue.priceList.get(5)); // 가격 : 베이비-입장권(무료)
+			variablePrint.setTicketPrice(variableValue.getPriceList().get(5)); // 가격 : 베이비-입장권(무료)
 		} if (variableValue.getUserAge() == StaticValue.getNewbornAge()) {
 			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameNewborn()); // 나이 그룹(이름) : 뉴본
-			variablePrint.setTicketPrice(variableValue.priceList.get(6)); // 가격 : 뉴본(무료)
+			variablePrint.setTicketPrice(variableValue.getPriceList().get(6)); // 가격 : 뉴본(무료)
 		}
 		
 		return variablePrint.getTicketPrice();
