@@ -29,3 +29,13 @@ Updated : Apr. 21, 2022 <br/><br/>
 <br/>
 ## 클래스 리스트 <br/> 
 ![LotteWorldTicketBox03_클래스 리스트 (2022 04 22)](https://user-images.githubusercontent.com/100850714/164425148-b9ec59a1-0a7f-46b3-8ecc-6fbc0bc56a47.jpg)
+<br/>
+<br/>
+## 구동 화면<br/>
+![image](https://user-images.githubusercontent.com/100850714/164576934-fb9976a1-b452-49ed-bf11-4094e0f81222.png)
+![image](https://user-images.githubusercontent.com/100850714/164576964-71db4098-0e90-48f9-9f1b-734054d9cad8.png)
+<br/>
+<br/>
+## CSV 파일<br/>
+![image](https://user-images.githubusercontent.com/100850714/164577022-66dceeeb-8999-4495-bba6-2e939decd306.png)
+
