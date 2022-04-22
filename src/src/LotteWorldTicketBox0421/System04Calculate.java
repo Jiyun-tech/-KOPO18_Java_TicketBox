@@ -9,38 +9,38 @@ public class System04Calculate {
 	
 	// 2. 나이 그룹(이름) & 3. 티켓 가격
 	int ticketPrice(VariableValue variableValue, VariablePrint variablePrint) {
-		if (variableValue.getUserAge() >= StaticValue.ELDER_AGE_MIN && variableValue.getInputBenefit_Elder() == 1) {
+		if (variableValue.getUserAge() >= StaticValue.getElderAgeMin() && variableValue.getInputBenefit_Elder() == 1) {
 			// 경로 할인 대상 -> 티켓 기본 가격 경로 우대 가격으로 지정되고, 상시 할인은 NON으로 적용됨.
-			variablePrint.setAgeTypeName(StaticValue.AGE_TYPE_NAME_ELDER); // 나이 그룹(이름) : 경로
+			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameElder()); // 나이 그룹(이름) : 경로
 			variablePrint.setTicketPrice(variableValue.priceList.get(0)); // 가격 : 경로
-		} if (variableValue.getUserAge() >= StaticValue.ELDER_AGE_MIN && variableValue.getInputBenefit_Elder() == 2) { 
+		} if (variableValue.getUserAge() >= StaticValue.getElderAgeMin() && variableValue.getInputBenefit_Elder() == 2) { 
 			// 경로 대상 나이이나, 상시 할인 선택한 경우 -> 티켓 기본 가격은 성인 가격으로 적용 & 상시 우대 적용됨.
-				variablePrint.setAgeTypeName(StaticValue.AGE_TYPE_NAME_ADULT); // 나이 그룹(이름) : 성인
+				variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameAdult()); // 나이 그룹(이름) : 성인
 				variablePrint.setTicketPrice(variableValue.priceList.get(1)); // 가격 :성인
-		} if (variableValue.getUserAge() >= StaticValue.ADULT_AGE_MIN 
-				&& variableValue.getUserAge() <= StaticValue.ADULT_AGE_MAX) {
-			variablePrint.setAgeTypeName(StaticValue.AGE_TYPE_NAME_ADULT); // 나이 그룹(이름) : 성인
+		} if (variableValue.getUserAge() >= StaticValue.getAdultAgeMin() 
+				&& variableValue.getUserAge() <= StaticValue.getAdultAgeMax()) {
+			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameAdult()); // 나이 그룹(이름) : 성인
 			variablePrint.setTicketPrice(variableValue.priceList.get(1)); // 가격 : 성인
-		} if (variableValue.getUserAge() >= StaticValue.JUVERNILE_AGE_MIN
-				&& variableValue.getUserAge() <= StaticValue.JUVENILE_AGE_MAX) {
-			variablePrint.setAgeTypeName(StaticValue.AGE_TYPE_NAME_JUVENILE); // 나이 그룹(이름) : 청소년
+		} if (variableValue.getUserAge() >= StaticValue.getJuvernileAgeMin()
+				&& variableValue.getUserAge() <= StaticValue.getJuvenileAgeMax()) {
+			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameJuvenile()); // 나이 그룹(이름) : 청소년
 			variablePrint.setTicketPrice(variableValue.priceList.get(2)); // 가격 : 청소년
-		} if (variableValue.getUserAge() >= StaticValue.CHILD_AGE_MIN
-				&& variableValue.getUserAge() <= StaticValue.CHILD_AGE_MAX) {
-			variablePrint.setAgeTypeName(StaticValue.AGE_TYPE_NAME_CHILD); // 나이 그룹(이름) : 어린이
+		} if (variableValue.getUserAge() >= StaticValue.getChildAgeMin()
+				&& variableValue.getUserAge() <= StaticValue.getChildAgeMax()) {
+			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameChild()); // 나이 그룹(이름) : 어린이
 			variablePrint.setTicketPrice(variableValue.priceList.get(3)); // 가격 : 어린이
-		} if (variableValue.getUserAge() >= StaticValue.BABY_AGE_MIN
-				&& variableValue.getUserAge() <= StaticValue.BABY_AGE_MAX
+		} if (variableValue.getUserAge() >= StaticValue.getBabyAgeMin()
+				&& variableValue.getUserAge() <= StaticValue.getBabyAgeMax()
 				&& variableValue.getInputTicketSelect_Baby() == 1) {
-			variablePrint.setAgeTypeName(StaticValue.AGE_TYPE_NAME_BABY_FREEPASS); // 나이 그룹(이름) : 베이비-자유이용권(유료)
+			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameBabyFreepass()); // 나이 그룹(이름) : 베이비-자유이용권(유료)
 			variablePrint.setTicketPrice(variableValue.priceList.get(4)); // 가격 : 베이비-자유이용권(유료)
-		} if (variableValue.getUserAge() >= StaticValue.BABY_AGE_MIN
-				&& variableValue.getUserAge() <= StaticValue.BABY_AGE_MAX
+		} if (variableValue.getUserAge() >= StaticValue.getBabyAgeMin()
+				&& variableValue.getUserAge() <= StaticValue.getBabyAgeMax()
 				&& variableValue.getInputTicketSelect_Baby() == 2) {
-			variablePrint.setAgeTypeName(StaticValue.AGE_TYPE_NAME_BABY_ENTERANCE); // 나이 그룹(이름) : 베이비-입장권(무료)
+			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameBabyEnterance()); // 나이 그룹(이름) : 베이비-입장권(무료)
 			variablePrint.setTicketPrice(variableValue.priceList.get(5)); // 가격 : 베이비-입장권(무료)
-		} if (variableValue.getUserAge() == StaticValue.NEWBORN_AGE) {
-			variablePrint.setAgeTypeName(StaticValue.AGE_TYPE_NAME_NEWBORN); // 나이 그룹(이름) : 뉴본
+		} if (variableValue.getUserAge() == StaticValue.getNewbornAge()) {
+			variablePrint.setAgeTypeName(StaticValue.getAgeTypeNameNewborn()); // 나이 그룹(이름) : 뉴본
 			variablePrint.setTicketPrice(variableValue.priceList.get(6)); // 가격 : 뉴본(무료)
 		}
 		
@@ -67,124 +67,124 @@ public class System04Calculate {
 	
 	// 6. 우대사항 적용 항목 (이름) & 7. 우대 할인율 & 9. 우대 적용 수량
 	String benefitType(VariableValue variableValue, VariablePrint variablePrint) {
-		if (variableValue.getUserAge() >= StaticValue.ELDER_AGE_MIN
+		if (variableValue.getUserAge() >= StaticValue.getElderAgeMin()
 			&& variableValue.getInputBenefit_Elder() == 1) { // 경로 우대를 선택한 경우
-			variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NON); // 적용 우대 이름 : 없음.
-			variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NON); // 우대없음 : 0.0
-			variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NON_MAX); // 우대 적용 수량 : 0
+			variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNon()); // 적용 우대 이름 : 없음.
+			variablePrint.setAppliedBenefit(StaticValue.getBenefitNon()); // 우대없음 : 0.0
+			variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNonMax()); // 우대 적용 수량 : 0
 		} else {
 			if (variableValue.getInputTicketSelect_place() == 1) { // 종합이용권
 				// (1) 우대 없음
 				if (variableValue.getInputBenefit() == 1) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NON); // 적용 우대 이름 : 없음.
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NON); // 우대없음 : 0.0
-					variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NON_MAX); // 우대 적용 수량 : 0
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNon()); // 적용 우대 이름 : 없음.
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitNon()); // 우대없음 : 0.0
+					variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNonMax()); // 우대 적용 수량 : 0
 				} 
 				// (2) 장애인 우대
 				if (variableValue.getInputBenefit() == 2) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_DISABLED); // 적용 우대 이름
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_DISABLED); // 장애인 우대 : 0.5
-					if (variablePrint.getInputNumberOfTicket() <= StaticValue.BENEFIT_DISABLED_MAX) { // 우대 적용 수량
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameDisabled()); // 적용 우대 이름
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitDisabled()); // 장애인 우대 : 0.5
+					if (variablePrint.getInputNumberOfTicket() <= StaticValue.getBenefitDisabledMax()) { // 우대 적용 수량
 						variablePrint.setBenefitAppliedTicketNumber(variablePrint.getInputNumberOfTicket());
 					} else {
-						variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_DISABLED_MAX); 
+						variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitDisabledMax()); 
 					}
 				} // (3) 국가유공자 우대 
 				if (variableValue.getInputBenefit() == 3) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NATIONAL_MERIT); // 적용 우대 이름
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NATIONAL_MERIT); // 국가유공자 우대 : 0.5
-					if (variablePrint.getInputNumberOfTicket() <= StaticValue.BENEFIT_NATIONAL_MERIT_MAX) { // 우대 적용 수량
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNationalMerit()); // 적용 우대 이름
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitNationalMerit()); // 국가유공자 우대 : 0.5
+					if (variablePrint.getInputNumberOfTicket() <= StaticValue.getBenefitNationalMeritMax()) { // 우대 적용 수량
 						variablePrint.setBenefitAppliedTicketNumber(variablePrint.getInputNumberOfTicket());
 					} else {
-						variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NATIONAL_MERIT_MAX); 
+						variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNationalMeritMax()); 
 					}
 				} // (4) 휴가장병 우대 
 				if (variableValue.getInputBenefit() == 4) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_ARMY); // 적용 우대 이름
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_ARMY); // 휴가장병 우대 : 0.49
-					if (variablePrint.getInputNumberOfTicket() <= StaticValue.BENEFIT_ARMY_MAX) { // 우대 적용 수량
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameArmy()); // 적용 우대 이름
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitArmy()); // 휴가장병 우대 : 0.49
+					if (variablePrint.getInputNumberOfTicket() <= StaticValue.getBenefitArmyMax()) { // 우대 적용 수량
 						variablePrint.setBenefitAppliedTicketNumber(variablePrint.getInputNumberOfTicket());
 					} else {
-						variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_ARMY_MAX); 
+						variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitArmyMax()); 
 					}
 				} // (5) 임산부 우대 
 				if (variableValue.getInputBenefit() == 5 
-						&& ( variableValue.getBirthYearIndex() == StaticValue.INDEX_FEMALE_OLD 
-							|| variableValue.getBirthYearIndex() == StaticValue.INDEX_FEMALE_NEW) ) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_PREGNANT); // 적용 우대 이름
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_PREGNANT); // 임산부 우대 : 0.49
-					if (variablePrint.getInputNumberOfTicket() <= StaticValue.BENEFIT_PREGNANT_MAX) { // 우대 적용 수량
+						&& ( variableValue.getBirthYearIndex() == StaticValue.getIndexFemaleOld() 
+							|| variableValue.getBirthYearIndex() == StaticValue.getIndexFemaleNew()) ) {
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNamePregnant()); // 적용 우대 이름
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitPregnant()); // 임산부 우대 : 0.49
+					if (variablePrint.getInputNumberOfTicket() <= StaticValue.getBenefitPregnantMax()) { // 우대 적용 수량
 						variablePrint.setBenefitAppliedTicketNumber(variablePrint.getInputNumberOfTicket());
 					} else {
-						variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_PREGNANT_MAX); 
+						variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitPregnantMax()); 
 					}
 				} // (5) 임산부 우대 선택하였으나, 사용자가 남자인 경우 
 				if (variableValue.getInputBenefit() == 5 
-						&& ( variableValue.getBirthYearIndex() == StaticValue.INDEX_MALE_OLD 
-						|| variableValue.getBirthYearIndex() == StaticValue.INDEX_MALE_NEW) ) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NON); // 적용 우대 이름 : 없음.
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NON); // 우대없음 : 0.0
-					variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NON_MAX); // 우대 적용 수량 : 0
+						&& ( variableValue.getBirthYearIndex() == StaticValue.getIndexMaleOld() 
+						|| variableValue.getBirthYearIndex() == StaticValue.getIndexMaleNew()) ) {
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNon()); // 적용 우대 이름 : 없음.
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitNon()); // 우대없음 : 0.0
+					variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNonMax()); // 우대 적용 수량 : 0
 				} // (6) 다자녀 우대 
 				if (variableValue.getInputBenefit() == 6) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_MULTICHILD); // 적용 우대 이름
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_MULTICHILD); // 다자녀 우대 : 0.3
-					if (variablePrint.getInputNumberOfTicket() <= StaticValue.BENEFIT_MULTICHILD_MAX) { // 우대 적용 수량
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameMultichild()); // 적용 우대 이름
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitMultichild()); // 다자녀 우대 : 0.3
+					if (variablePrint.getInputNumberOfTicket() <= StaticValue.getBenefitMultichildMax()) { // 우대 적용 수량
 						variablePrint.setBenefitAppliedTicketNumber(variablePrint.getInputNumberOfTicket());
 					} else {
-						variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_MULTICHILD_MAX); 
+						variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitMultichildMax()); 
 					}
 				}
 			} 
 			else if (variableValue.getInputTicketSelect_place() == 2) { // 파크이용권
 				// (1) 우대 없음
 				if (variableValue.getInputBenefit() == 1) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NON); // 적용 우대 이름 : 없음.
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NON); // 우대없음 : 0.0
-					variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NON_MAX); // 우대 적용 수량 : 0
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNon()); // 적용 우대 이름 : 없음.
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitNon()); // 우대없음 : 0.0
+					variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNonMax()); // 우대 적용 수량 : 0
 				} 
 				// (2) 장애인 우대
 				if (variableValue.getInputBenefit() == 2) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_DISABLED); // 적용 우대 이름
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_DISABLED); // 장애인 우대 : 0.5
-					if (variablePrint.getInputNumberOfTicket() <= StaticValue.BENEFIT_DISABLED_MAX) { // 우대 적용 수량
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameDisabled()); // 적용 우대 이름
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitDisabled()); // 장애인 우대 : 0.5
+					if (variablePrint.getInputNumberOfTicket() <= StaticValue.getBenefitDisabledMax()) { // 우대 적용 수량
 						variablePrint.setBenefitAppliedTicketNumber(variablePrint.getInputNumberOfTicket());
 					} else {
-						variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_DISABLED_MAX); 
+						variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitDisabledMax()); 
 					}
 				} // (3) 국가유공자 우대 
 				if (variableValue.getInputBenefit() == 3) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NATIONAL_MERIT); // 적용 우대 이름
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NATIONAL_MERIT); // 국가유공자 우대 : 0.5
-					if (variablePrint.getInputNumberOfTicket() <= StaticValue.BENEFIT_NATIONAL_MERIT_MAX) { // 우대 적용 수량
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNationalMerit()); // 적용 우대 이름
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitNationalMerit()); // 국가유공자 우대 : 0.5
+					if (variablePrint.getInputNumberOfTicket() <= StaticValue.getBenefitNationalMeritMax()) { // 우대 적용 수량
 						variablePrint.setBenefitAppliedTicketNumber(variablePrint.getInputNumberOfTicket());
 					} else {
-						variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NATIONAL_MERIT_MAX); 
+						variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNationalMeritMax()); 
 					}
 				} // (4) 휴가장병 우대 
 				if (variableValue.getInputBenefit() == 4) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NON); // 적용 우대 이름 : 없음.
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NON); // 우대없음 : 0.0
-					variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NON_MAX); // 우대 적용 수량 : 0
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNon()); // 적용 우대 이름 : 없음.
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitNon()); // 우대없음 : 0.0
+					variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNonMax()); // 우대 적용 수량 : 0
 				} // (5) 임산부 우대 
 				if (variableValue.getInputBenefit() == 5 
-						&& ( variableValue.getBirthYearIndex() == StaticValue.INDEX_FEMALE_OLD 
-							|| variableValue.getBirthYearIndex() == StaticValue.INDEX_FEMALE_NEW) ) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NON); // 적용 우대 이름 : 없음.
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NON); // 우대없음 : 0.0
-					variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NON_MAX); // 우대 적용 수량 : 0
+						&& ( variableValue.getBirthYearIndex() == StaticValue.getIndexFemaleOld() 
+							|| variableValue.getBirthYearIndex() == StaticValue.getIndexFemaleNew()) ) {
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNon()); // 적용 우대 이름 : 없음.
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitNon()); // 우대없음 : 0.0
+					variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNonMax()); // 우대 적용 수량 : 0
 				} // (5) 임산부 우대 선택하였으나, 사용자가 남자인 경우 
 				if (variableValue.getInputBenefit() == 5 
-						&& ( variableValue.getBirthYearIndex() == StaticValue.INDEX_MALE_OLD 
-						|| variableValue.getBirthYearIndex() == StaticValue.INDEX_MALE_NEW) ) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NON); // 적용 우대 이름 : 없음.
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NON); // 우대없음 : 0.0
-					variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NON_MAX); // 우대 적용 수량 : 0
+						&& ( variableValue.getBirthYearIndex() == StaticValue.getIndexMaleOld() 
+						|| variableValue.getBirthYearIndex() == StaticValue.getIndexMaleNew()) ) {
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNon()); // 적용 우대 이름 : 없음.
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitNon()); // 우대없음 : 0.0
+					variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNonMax()); // 우대 적용 수량 : 0
 				} // (6) 다자녀 우대 
 				if (variableValue.getInputBenefit() == 6) {
-					variablePrint.setBenefitType(StaticValue.BENEFIT_TYPE_NAME_NON); // 적용 우대 이름 : 없음.
-					variablePrint.setAppliedBenefit(StaticValue.BENEFIT_NON); // 우대없음 : 0.0
-					variablePrint.setBenefitAppliedTicketNumber(StaticValue.BENEFIT_NON_MAX); // 우대 적용 수량 : 0
+					variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNon()); // 적용 우대 이름 : 없음.
+					variablePrint.setAppliedBenefit(StaticValue.getBenefitNon()); // 우대없음 : 0.0
+					variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNonMax()); // 우대 적용 수량 : 0
 					}
 				}	
 			}
