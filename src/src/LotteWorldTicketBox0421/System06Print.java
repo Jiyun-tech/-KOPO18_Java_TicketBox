@@ -53,25 +53,25 @@ public class System06Print {
 		
 		BufferedWriter dataOut;
 		try {
-			dataOut = new BufferedWriter(new FileWriter("C:\\LotteWorldTicketData\\TicketSalesData.csv"));
-			for (int index = 0; index < system01Input.OrderDataList.size(); index++) {
-		
-				dataOut.write(variableValue.getTodayYear());
-				dataOut.write(variableValue.getTodayMonth());
-				dataOut.write(variableValue.getTodayDay());
-				dataOut.write(system01Input.OrderDataList.get(index).getTicketTypeName());
-				dataOut.write(system01Input.OrderDataList.get(index).getAgeTypeName());
-				dataOut.write(system01Input.OrderDataList.get(index).getTicketPrice());
-				dataOut.write(system01Input.OrderDataList.get(index).getInputNumberOfTicket());
-				dataOut.write(system01Input.OrderDataList.get(index).getTotalTicketPrice());
-				dataOut.write(system01Input.OrderDataList.get(index).getBenefitType());
-				dataOut.write(system01Input.OrderDataList.get(index).getBenefitAmountPerTicket());
-				dataOut.write(system01Input.OrderDataList.get(index).getBenefitAppliedTicketNumber());
-				dataOut.write(system01Input.OrderDataList.get(index).getDiscountedTicketPrice());
-				dataOut.write(system01Input.OrderDataList.get(index).getFinalTicketPrice());
+			dataOut = new BufferedWriter(new FileWriter("C:\\Users\\Jiyun Seo\\Desktop\\Git_upload\\KOPO18_Java_TicketBox\\src\\TicketSalesData\\DailyTicketSales.csv", true));
+			
+				dataOut.write(variableValue.getTodayYear() + ",");
+				dataOut.write(variableValue.getTodayMonth()+ ",");
+				dataOut.write(variableValue.getTodayDay()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getTicketTypeName()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getAgeTypeName()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getTicketPrice()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getInputNumberOfTicket()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getTotalTicketPrice()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getBenefitType()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getBenefitAmountPerTicket()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getBenefitAppliedTicketNumber()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getDiscountedTicketPrice()+ ",");
+				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getFinalTicketPrice()+ "\n");
 				
-			}
+				dataOut.flush();
 				dataOut.close();
+				
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
