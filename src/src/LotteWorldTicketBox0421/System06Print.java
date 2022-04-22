@@ -55,9 +55,9 @@ public class System06Print {
 		try {
 			dataOut = new BufferedWriter(new FileWriter("C:\\Users\\Jiyun Seo\\Desktop\\Git_upload\\KOPO18_Java_TicketBox\\src\\TicketSalesData\\DailyTicketSales.csv", true));
 			
-				dataOut.write(variableValue.getTodayYear() + ",");
+				dataOut.write(variableValue.getTodayYear()+ ",");
 				dataOut.write(variableValue.getTodayMonth()+ ",");
-				dataOut.write(variableValue.getTodayDay()+ ",");
+				dataOut.write(variableValue.getTodayDay() + ",");
 				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getTicketTypeName()+ ",");
 				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getAgeTypeName()+ ",");
 				dataOut.write(system01Input.OrderDataList.get(system01Input.OrderDataList.size()-1).getTicketPrice()+ ",");

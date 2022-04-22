@@ -28,7 +28,7 @@ public class System00HereWeGo {
 			system02Calculate.ageCalculation(system01Input.variableValue);
 			
 			system03Input.inputTicketSelect_Baby(system01Input.variableValue);
-			system03Input.inputBenefit(system01Input.variableValue);
+			system03Input.inputBenefit(system01Input.variableValue, system01Input.variablePrint);
 			
 			system04Calculate.ticketPrice(system01Input.variableValue, system01Input.variablePrint);
 			system04Calculate.totalTicketPrice(system01Input.variablePrint);

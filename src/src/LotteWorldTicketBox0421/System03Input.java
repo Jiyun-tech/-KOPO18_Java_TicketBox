@@ -19,7 +19,7 @@ public class System03Input {
 	}
 	
 	// 2. 우대사항 선택 (우대사항 적용 불가한 베이비&뉴본의 경우 우대사항 선택지 출력되지 않음)
-	int inputBenefit(VariableValue variableValue) { 
+	int inputBenefit(VariableValue variableValue, VariablePrint variablePrint) { 
 		if ( variableValue.getUserAge() > StaticValue.getBabyAgeMax()) {
 			do {
 				System.out.print("우대사항을 선택하세요.\n\t1. 없음 (나이 우대는 자동 처리)\n\t2. 장애인\n\t3. 국가유공자\n\t4. 휴가장병 (종합이용권만 해당)\n\t5. 임산부 (종합이용권만 해당)\n\t6. 다둥이 행복카드 (종합이용권만 해당)\n\t => ");
@@ -33,6 +33,9 @@ public class System03Input {
 			}
 		} else {
 				variableValue.setInputBenefit(0); // 베이비&뉴본 -> 우대사항 없음.
+				variablePrint.setBenefitType(StaticValue.getBenefitTypeNameNon()); // 적용 우대 이름 : 없음.
+				variablePrint.setAppliedBenefit(StaticValue.getBenefitNon()); // 우대없음 : 0.0
+				variablePrint.setBenefitAppliedTicketNumber(StaticValue.getBenefitNonMax()); // 우대 적용 수량 : 0
 		}
 		return variableValue.getInputBenefit();
 	}
