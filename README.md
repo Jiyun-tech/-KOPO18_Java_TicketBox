@@ -22,7 +22,9 @@ Updated : Apr. 21, 2022 <br/><br/>
         (10) 최종 가격 (티켓 총 가격 * 우대 할인 총 금액)<br/>
 <br/>
 <br/>
+# 프로그램 구조 <br/> 
 ![LotteWorldTicketBox03_구조 (2022 04 22)](https://user-images.githubusercontent.com/100850714/164425116-1737741f-edef-4fbd-85cb-693b37371a54.jpg)
 <br/>
 <br/>
+# 클래스 리스트 <br/> 
 ![LotteWorldTicketBox03_클래스 리스트 (2022 04 22)](https://user-images.githubusercontent.com/100850714/164425148-b9ec59a1-0a7f-46b3-8ecc-6fbc0bc56a47.jpg)
