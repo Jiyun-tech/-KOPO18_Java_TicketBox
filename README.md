@@ -73,6 +73,6 @@ System06Print : 출력 양식 및 항목 지정하여 출력
 ![image](https://user-images.githubusercontent.com/100850714/164576964-71db4098-0e90-48f9-9f1b-734054d9cad8.png)
 -------------------------------------
 CSV 파일<br/>
-특이사항) 항목 이름 출력을 구현하지 못하여 데이터만 저장 가능한 상태.
+> + 특이사항 : 항목 이름 출력을 구현하지 못하여 데이터만 저장 가능한 상태.
 ![image](https://user-images.githubusercontent.com/100850714/164616697-234bed3a-de03-47cf-846b-a80a92e5ffb9.png)
 -------------------------------------
