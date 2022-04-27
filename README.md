@@ -63,17 +63,17 @@ System06Print : 출력 양식 및 항목 지정하여 출력
 (10) 최종 가격 (티켓 총 가격 * 우대 할인 총 금액)<br/>
 </code></pre>
 -------------------------------------
-# 프로그램 구조 <br/> 
+프로그램 구조 <br/> 
 ![LotteWorldTicketBox03_구조 (2022 04 22)](https://user-images.githubusercontent.com/100850714/164425116-1737741f-edef-4fbd-85cb-693b37371a54.jpg)
 -------------------------------------
-# 클래스 리스트 <br/> 
+클래스 리스트 <br/> 
 ![LotteWorldTicketBox03_클래스 리스트 (2022 04 22)](https://user-images.githubusercontent.com/100850714/164425148-b9ec59a1-0a7f-46b3-8ecc-6fbc0bc56a47.jpg)
 -------------------------------------
-# 구동 화면<br/>
+구동 화면<br/>
 ![image](https://user-images.githubusercontent.com/100850714/164576934-fb9976a1-b452-49ed-bf11-4094e0f81222.png)
 ![image](https://user-images.githubusercontent.com/100850714/164576964-71db4098-0e90-48f9-9f1b-734054d9cad8.png)
 -------------------------------------
-# CSV 파일<br/>
+CSV 파일<br/>
 특이사항) 항목 이름 출력을 구현하지 못하여 데이터만 저장 가능한 상태.
 ![image](https://user-images.githubusercontent.com/100850714/164616697-234bed3a-de03-47cf-846b-a80a92e5ffb9.png)
 -------------------------------------
